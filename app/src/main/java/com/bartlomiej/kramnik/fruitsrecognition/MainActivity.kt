@@ -38,6 +38,12 @@ class MainActivity : AppCompatActivity() {
             it.setDisplayOrientation(90)
         }
 
+        mCamera?.takePicture(null, Camera.PictureCallback(){ bytes: ByteArray, camera: Camera -> {
+            //todo tutaj wstawic caly model
+        }
+
+        },null,null)
+
 
     }
 
