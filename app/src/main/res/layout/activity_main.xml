@@ -2,9 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bartlomiej.kramnik.fruitsrecognition.MainActivity">
+    tools:context="com.bartlomiej.kramnik.fruitsrecognition.View.MainActivity">
+
+    <TextView
+        android:id="@+id/fruit_text_view"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text=""
+        android:layout_height="wrap_content" />
 
     <FrameLayout
         android:layout_width="match_parent"

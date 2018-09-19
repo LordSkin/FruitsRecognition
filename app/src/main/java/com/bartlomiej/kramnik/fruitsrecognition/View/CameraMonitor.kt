@@ -1,14 +1,13 @@
-package com.bartlomiej.kramnik.fruitsrecognition
+package com.bartlomiej.kramnik.fruitsrecognition.View
 
 import android.content.Context
 import android.hardware.Camera
-import android.util.Log
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import java.io.IOException
 
 /**
- * Created by adolf on 16.09.18.
+ * Created on 16.09.18.
  */
 class CameraMonitor(context: Context, private val mCamera: Camera
 ) : SurfaceView(context), SurfaceHolder.Callback {
