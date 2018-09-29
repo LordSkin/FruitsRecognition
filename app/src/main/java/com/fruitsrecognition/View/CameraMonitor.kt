@@ -1,4 +1,4 @@
-package com.bartlomiej.kramnik.fruitsrecognition.View
+package com.fruitsrecognition.View
 
 import android.content.Context
 import android.hardware.Camera
@@ -27,11 +27,13 @@ class CameraMonitor(context: Context, private val mCamera: Camera
                 setPreviewDisplay(holder)
                 startPreview()
             } catch (e: IOException) {
+                e.printStackTrace()
             }
         }
     }
 
     override fun surfaceDestroyed(holder: SurfaceHolder) {
+        var x =10
         // empty. Take care of releasing the Camera preview in your activity.
     }
 

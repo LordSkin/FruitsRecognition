@@ -1,4 +1,4 @@
-package com.bartlomiej.kramnik.fruitsrecognition.View
+package com.fruitsrecognition.View
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -9,26 +9,33 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.widget.FrameLayout
 import android.widget.TextView
-import com.bartlomiej.kramnik.fruitsrecognition.Model.NeuralNetwork.Fruit
-import com.bartlomiej.kramnik.fruitsrecognition.R
+import com.fruitsrecognition.Model.NeuralNetwork.Fruit
+import com.fruitsrecognition.Presenter.AppPresenter
+import com.fruitsrecognition.R
+import com.fruitsrecognition.Root.App
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainView {
 
-    private lateinit var fruitTextView : TextView
-    private var mCamera : Camera? = null
-    private lateinit var mMonitor : CameraMonitor
+    private lateinit var fruitTextView: TextView
+    private var mCamera: Camera? = null
+    private lateinit var mMonitor: CameraMonitor
     val PERMISSION_CAMERA = 34
 
+    @Inject
+    lateinit var presenter: AppPresenter
+
     override fun fruitNotFound() {
-        fruitTextView?.text = getString(R.string.fruit_not_found)
+        runOnUiThread(Runnable { fruitTextView?.text = getString(R.string.fruit_not_found) })
     }
 
     override fun showFruit(fruit: Fruit) {
-        fruitTextView?.text = fruit.name
+        runOnUiThread(Runnable { fruitTextView?.text = fruit.name })
     }
 
-    override fun getFrame(callback: Camera.PictureCallback) {
-        mCamera?.takePicture(null, callback,null,null)
+    override fun getFrame(callback: Camera.PreviewCallback) {
+        mCamera?.startPreview()
+        mCamera?.setPreviewCallback(callback)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +45,7 @@ class MainActivity : AppCompatActivity(), MainView {
         fruitTextView = findViewById(R.id.fruit_text_view)
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), PERMISSION_CAMERA)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), PERMISSION_CAMERA)
         }
 
         mCamera = getCameraInstance()
@@ -56,16 +63,26 @@ class MainActivity : AppCompatActivity(), MainView {
             it.setDisplayOrientation(90)
         }
 
+        (application as App).getAppComponent().inject(this)
 
-
+        presenter.startView(this)
 
     }
 
-    private fun getCameraInstance() : Camera?{
+    override fun onPause() {
+        super.onPause()
+        presenter.stopCamera()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.stopCamera()
+    }
+
+    private fun getCameraInstance(): Camera? {
         return try {
             Camera.open()
-        }
-        catch (e:Exception  ){
+        } catch (e: Exception) {
             return null
         }
     }

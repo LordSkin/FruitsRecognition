@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bartlomiej.kramnik.fruitsrecognition.View.MainActivity">
+    tools:context="com.fruitsrecognition.View.MainActivity">
 
     <TextView
         android:id="@+id/fruit_text_view"

@@ -1,4 +1,4 @@
-package com.bartlomiej.kramnik.fruitsrecognition.Model.NeuralNetwork
+package com.fruitsrecognition.Model.NeuralNetwork
 
 /**
  * Created by

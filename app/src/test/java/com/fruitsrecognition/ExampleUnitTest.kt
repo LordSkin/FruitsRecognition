@@ -1,4 +1,4 @@
-package com.bartlomiej.kramnik.fruitsrecognition
+package com.fruitsrecognition
 
 import org.junit.Test
 
