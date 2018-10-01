@@ -1,5 +1,6 @@
 package com.fruitsrecognition.Model.NeuralNetwork
 
+import com.fruitsrecognition.Model.Entities.Fruit
 import java.util.*
 
 /**

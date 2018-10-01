@@ -1,7 +1,7 @@
 package com.fruitsrecognition.View
 
 import android.hardware.Camera
-import com.fruitsrecognition.Model.NeuralNetwork.Fruit
+import com.fruitsrecognition.Model.Entities.Fruit
 
 /**
  * Created on 17.09.18.

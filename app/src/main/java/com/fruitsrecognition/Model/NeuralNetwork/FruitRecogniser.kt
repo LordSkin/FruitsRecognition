@@ -1,5 +1,7 @@
 package com.fruitsrecognition.Model.NeuralNetwork
 
+import com.fruitsrecognition.Model.Entities.Fruit
+
 /**
  * Created on 16.09.18.
  */

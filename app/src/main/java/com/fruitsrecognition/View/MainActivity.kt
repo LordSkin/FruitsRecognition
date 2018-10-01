@@ -9,7 +9,7 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.widget.FrameLayout
 import android.widget.TextView
-import com.fruitsrecognition.Model.NeuralNetwork.Fruit
+import com.fruitsrecognition.Model.Entities.Fruit
 import com.fruitsrecognition.Presenter.AppPresenter
 import com.fruitsrecognition.R
 import com.fruitsrecognition.Root.App

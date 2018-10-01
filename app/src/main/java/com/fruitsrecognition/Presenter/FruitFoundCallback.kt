@@ -1,6 +1,6 @@
 package com.fruitsrecognition.Presenter
 
-import com.fruitsrecognition.Model.NeuralNetwork.Fruit
+import com.fruitsrecognition.Model.Entities.Fruit
 
 /**
  * Created on 17.09.18.

@@ -1,4 +1,4 @@
-package com.fruitsrecognition.Model.NeuralNetwork
+package com.fruitsrecognition.Model.BackgroundTask
 
 import android.hardware.Camera
 

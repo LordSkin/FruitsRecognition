@@ -1,6 +1,6 @@
 package com.fruitsrecognition.Root.Dagger
 
-import com.fruitsrecognition.Model.NeuralNetwork.RecognitionTask
+import com.fruitsrecognition.Model.BackgroundTask.RecognitionTask
 import com.fruitsrecognition.View.MainActivity
 import dagger.Component
 
