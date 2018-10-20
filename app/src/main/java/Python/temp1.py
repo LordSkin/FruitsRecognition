@@ -21,9 +21,9 @@ train_labels_banana.fill(0)
 
 
 counter =0
-for root, dirs, files in os.walk("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/Banana/"):
+for root, dirs, files in os.walk("/Fruits/Banana/"):
     for filename in files:
-        im = load_image("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/Banana/"+filename)
+        im = load_image("Fruits/Banana/"+filename)
         train_images_banana[counter,:,:]= im
         counter = counter+1
 
@@ -35,9 +35,9 @@ train_labels_pear.fill(1)
 
 
 counter =0
-for root, dirs, files in os.walk("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/Pear/"):
+for root, dirs, files in os.walk("/Fruits/Pear/"):
     for filename in files:
-        im = load_image("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/Pear/"+filename)
+        im = load_image("/Fruits/Pear/"+filename)
         train_images_pear[counter,:,:]= im
         counter = counter+1
 
@@ -48,9 +48,9 @@ train_labels_raspberry.fill(2)
 
 
 counter =0
-for root, dirs, files in os.walk("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/Raspberry/"):
+for root, dirs, files in os.walk("/Fruits/Raspberry/"):
     for filename in files:
-        im = load_image("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/Raspberry/"+filename)
+        im = load_image("/Fruits/Raspberry/"+filename)
         train_images_raspberry[counter,:,:]= im
         counter = counter+1
 
@@ -70,9 +70,9 @@ test_labels_banana.fill(0)
 
 
 counter =0
-for root, dirs, files in os.walk("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/test/Banana/"):
+for root, dirs, files in os.walk("/Fruits/test/Banana/"):
     for filename in files:
-        im = load_image("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/test/Banana/"+filename)
+        im = load_image("/Fruits/test/Banana/"+filename)
         test_images_banana[counter,:,:]= im
         counter = counter+1
 
@@ -84,9 +84,9 @@ test_labels_pear.fill(1)
 
 
 counter =0
-for root, dirs, files in os.walk("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/test/Pear/"):
+for root, dirs, files in os.walk("/Fruits/test/Pear/"):
     for filename in files:
-        im = load_image("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/test/Pear/"+filename)
+        im = load_image("/Fruits/test/Pear/"+filename)
         test_images_pear[counter,:,:]= im
         counter = counter+1
 
@@ -97,9 +97,9 @@ test_labels_raspberry.fill(2)
 
 
 counter =0
-for root, dirs, files in os.walk("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/test/Raspberry/"):
+for root, dirs, files in os.walk("/Fruits/test/Raspberry/"):
     for filename in files:
-        im = load_image("A:/Dropbox/Inzynierka/Gotowe/Aplikacja Serwerowa/tensorFlow1/src/main/resources/Fruits/test/Raspberry/"+filename)
+        im = load_image("/Fruits/test/Raspberry/"+filename)
         test_images_raspberry[counter,:,:]= im
         counter = counter+1
 
